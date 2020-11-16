@@ -1,5 +1,5 @@
 ---
-title: "Writing functinos"
+title: "Writing functions"
 output: github_document
 ---
 
@@ -429,3 +429,24 @@ f(x1 = y)
 ```
 
 So a lot of this can be confusing and problematic - and when you restart next session, your code can break and will return the message like "Error in f(x1 = y) : object 'x2' not found" - this is a scoping issue
+
+## Functions as arguments
+
+```{r}
+my_summary = function(x, summ_func) {
+  
+  summ_func(x)
+  
+}
+
+x_vec = rnorm(100, 3, 7)
+
+mean(x_vec)
+median(x_vec)
+
+my_summary(x_vec, mean)
+my_summary(x_vec, median)
+my_summary(x_vec, sd)
+my_summary(x_vec, IQR)
+```
+
