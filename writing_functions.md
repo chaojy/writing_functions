@@ -56,12 +56,12 @@ x_vec = rnorm(30, mean = 5, sd = 3)
 (x_vec - mean(x_vec)) / sd(x_vec)
 ```
 
-    ##  [1] -0.941265214  0.025095396 -0.328989024  2.241102117  1.085882899
-    ##  [6]  0.556551269 -0.427992842 -0.688500249 -1.716026408 -0.599991371
-    ## [11] -0.707101210  0.823460005 -0.856860843  0.015417836  0.257642632
-    ## [16] -1.135594061 -0.223965721 -0.005288951  0.493727829  0.905118606
-    ## [21] -0.053783125  0.487993976  1.882154161 -0.822356049 -0.681183439
-    ## [26] -2.116987009 -0.393359226  1.028802762  1.553754843  0.342540408
+    ##  [1] -0.485647876 -2.630563259 -0.603606225 -0.312251461  0.961694015
+    ##  [6] -0.048981788  0.210305740  0.931705272  0.008258203 -0.087647205
+    ## [11]  0.514274450  1.123036058  1.461688014 -0.549214077  0.138540836
+    ## [16] -0.523342905  1.386806122 -0.798327831 -0.807362828 -1.671573225
+    ## [21]  0.046672350 -0.381816011 -1.503442349  2.273668675  0.675827056
+    ## [26]  0.035544195  0.324880294  0.957827679 -0.365403113 -0.281548806
 
 I want a function to compute z-scores
 
@@ -78,12 +78,12 @@ z_scores = function(x) {
 z_scores(x_vec)
 ```
 
-    ##  [1] -0.941265214  0.025095396 -0.328989024  2.241102117  1.085882899
-    ##  [6]  0.556551269 -0.427992842 -0.688500249 -1.716026408 -0.599991371
-    ## [11] -0.707101210  0.823460005 -0.856860843  0.015417836  0.257642632
-    ## [16] -1.135594061 -0.223965721 -0.005288951  0.493727829  0.905118606
-    ## [21] -0.053783125  0.487993976  1.882154161 -0.822356049 -0.681183439
-    ## [26] -2.116987009 -0.393359226  1.028802762  1.553754843  0.342540408
+    ##  [1] -0.485647876 -2.630563259 -0.603606225 -0.312251461  0.961694015
+    ##  [6] -0.048981788  0.210305740  0.931705272  0.008258203 -0.087647205
+    ## [11]  0.514274450  1.123036058  1.461688014 -0.549214077  0.138540836
+    ## [16] -0.523342905  1.386806122 -0.798327831 -0.807362828 -1.671573225
+    ## [21]  0.046672350 -0.381816011 -1.503442349  2.273668675  0.675827056
+    ## [26]  0.035544195  0.324880294  0.957827679 -0.365403113 -0.281548806
 
 Try my function on some other things. These should give errors
 
@@ -139,12 +139,12 @@ z_scores = function(x) {
 z_scores(x_vec)
 ```
 
-    ##  [1] -0.941265214  0.025095396 -0.328989024  2.241102117  1.085882899
-    ##  [6]  0.556551269 -0.427992842 -0.688500249 -1.716026408 -0.599991371
-    ## [11] -0.707101210  0.823460005 -0.856860843  0.015417836  0.257642632
-    ## [16] -1.135594061 -0.223965721 -0.005288951  0.493727829  0.905118606
-    ## [21] -0.053783125  0.487993976  1.882154161 -0.822356049 -0.681183439
-    ## [26] -2.116987009 -0.393359226  1.028802762  1.553754843  0.342540408
+    ##  [1] -0.485647876 -2.630563259 -0.603606225 -0.312251461  0.961694015
+    ##  [6] -0.048981788  0.210305740  0.931705272  0.008258203 -0.087647205
+    ## [11]  0.514274450  1.123036058  1.461688014 -0.549214077  0.138540836
+    ## [16] -0.523342905  1.386806122 -0.798327831 -0.807362828 -1.671573225
+    ## [21]  0.046672350 -0.381816011 -1.503442349  2.273668675  0.675827056
+    ## [26]  0.035544195  0.324880294  0.957827679 -0.365403113 -0.281548806
 
 These should give erros
 
@@ -201,12 +201,12 @@ z_scores = function(x) {
 z_scores(x_vec)
 ```
 
-    ##  [1] -0.941265214  0.025095396 -0.328989024  2.241102117  1.085882899
-    ##  [6]  0.556551269 -0.427992842 -0.688500249 -1.716026408 -0.599991371
-    ## [11] -0.707101210  0.823460005 -0.856860843  0.015417836  0.257642632
-    ## [16] -1.135594061 -0.223965721 -0.005288951  0.493727829  0.905118606
-    ## [21] -0.053783125  0.487993976  1.882154161 -0.822356049 -0.681183439
-    ## [26] -2.116987009 -0.393359226  1.028802762  1.553754843  0.342540408
+    ##  [1] -0.485647876 -2.630563259 -0.603606225 -0.312251461  0.961694015
+    ##  [6] -0.048981788  0.210305740  0.931705272  0.008258203 -0.087647205
+    ## [11]  0.514274450  1.123036058  1.461688014 -0.549214077  0.138540836
+    ## [16] -0.523342905  1.386806122 -0.798327831 -0.807362828 -1.671573225
+    ## [21]  0.046672350 -0.381816011 -1.503442349  2.273668675  0.675827056
+    ## [26]  0.035544195  0.324880294  0.957827679 -0.365403113 -0.281548806
 
 These should give errors
 
@@ -235,5 +235,215 @@ z_scores(c(TRUE, TRUE, FALSE, TRUE))
     ## Error in z_scores(c(TRUE, TRUE, FALSE, TRUE)): Input must be numeric
 
 ``` r
-## now everything is working the way we want it to
+## now everything is working the way we want it to - responses are appropriate
+```
+
+## Multiple outputs
+
+``` r
+mean_and_sd = function(x) {
+  
+  if (!is.numeric(x)) {
+    stop("Input must be numeric")
+  }
+  
+  if (length(x) < 3) {
+    stop("Input must have at least three numbers")
+  }
+
+  mean_x = mean(x)
+  sd_x = sd(x)
+ 
+## one option is list   
+#  list(
+#    mean = mean_x,
+#    sd = sd_x
+#  )
+  
+# we will do tibble
+  
+  tibble(
+    mean = mean_x,
+    sd = sd_x
+  )
+  
+}
+## the input is x
+
+z_scores(x_vec)
+```
+
+    ##  [1] -0.485647876 -2.630563259 -0.603606225 -0.312251461  0.961694015
+    ##  [6] -0.048981788  0.210305740  0.931705272  0.008258203 -0.087647205
+    ## [11]  0.514274450  1.123036058  1.461688014 -0.549214077  0.138540836
+    ## [16] -0.523342905  1.386806122 -0.798327831 -0.807362828 -1.671573225
+    ## [21]  0.046672350 -0.381816011 -1.503442349  2.273668675  0.675827056
+    ## [26]  0.035544195  0.324880294  0.957827679 -0.365403113 -0.281548806
+
+Check that the function works.
+
+``` r
+x_vec = rnorm(1000)
+
+mean_and_sd(x_vec)
+```
+
+    ## # A tibble: 1 x 2
+    ##     mean    sd
+    ##    <dbl> <dbl>
+    ## 1 0.0192 0.968
+
+``` r
+#awesome
+```
+
+## Multiple inputs
+
+``` r
+x_vec = rnorm(100, mean = 3, sd = 4)
+mean_and_sd(x_vec)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  2.58  4.12
+
+``` r
+## can just run this to create multiple vectors and compute mean/sd multiple times
+```
+
+Create a simulated data set
+
+``` r
+sim_data =
+  tibble(
+    x = rnorm(n = 100, mean = 4, sd = 3)
+  )
+
+sim_data %>% 
+  summarize(
+    mean = mean(x),
+    sd = sd(x)
+  )
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  4.08  2.71
+
+I’d like to do this with a function
+
+``` r
+sim_mean_sd = function(samp_size, mu, sigma) {
+  
+  sim_data =
+    tibble(
+      x = rnorm(n = samp_size, mean = mu, sd = sigma)
+  )
+
+  sim_data %>% 
+    summarize(
+      mean = mean(x),
+      sd = sd(x)
+  ) 
+  
+  
+}
+
+sim_mean_sd(100, 6, 3)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  5.70  3.00
+
+``` r
+## so what happens with this line of code is that it runs all the previous above code - creates new tibble each time with new/different numbers, means, and sd with specified sample size, mean, and sd.
+## this sets the stage for later lecture about simulation - learning something about randomness, the "sampling variation"
+```
+
+``` r
+sim_mean_sd(100, 6, 3)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  6.32  2.81
+
+``` r
+## positional mapping - R knows that the numbers corespond to the position 
+
+sim_mean_sd(samp_size = 100, mu = 6, sigma = 3)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  5.81  2.57
+
+``` r
+## named matching - this is preferred and best
+sim_mean_sd(mu = 6, samp_size = 100, sigma = 3)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  5.50  2.63
+
+``` r
+## in matched mapping, order does not matter
+
+## next thing you can do is set default values:
+sim_mean_sd = function(samp_size, mu = 3, sigma = 4) {
+  
+  sim_data =
+    tibble(
+      x = rnorm(n = samp_size, mean = mu, sd = sigma)
+  )
+
+  sim_data %>% 
+    summarize(
+      mean = mean(x),
+      sd = sd(x)
+  ) 
+  
+  
+}
+
+sim_mean_sd(samp_size = 100, mu = 6, sigma = 3)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  6.42  2.83
+
+``` r
+#3 here, mu = 6 will overwrite the above default, and sigma will overwrite the above default
+sim_mean_sd(mu = 6, samp_size = 100, sigma = 3)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  6.87  2.84
+
+``` r
+sim_mean_sd(samp_size = 100)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  2.84  3.72
+
+``` r
+#but here, when not specified, it will default to the avove default values specified
+
+#so we are able to do good stuff with functions
 ```

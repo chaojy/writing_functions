@@ -117,6 +117,135 @@ z_scores("my name is jeff")
 z_scores(mtcars)
 z_scores(c(TRUE, TRUE, FALSE, TRUE))
 
-## now everything is working the way we want it to
+## now everything is working the way we want it to - responses are appropriate
+```
+
+## Multiple outputs
+
+```{r}
+mean_and_sd = function(x) {
+  
+  if (!is.numeric(x)) {
+    stop("Input must be numeric")
+  }
+  
+  if (length(x) < 3) {
+    stop("Input must have at least three numbers")
+  }
+
+  mean_x = mean(x)
+  sd_x = sd(x)
+ 
+## one option is list   
+#  list(
+#    mean = mean_x,
+#    sd = sd_x
+#  )
+  
+# we will do tibble
+  
+  tibble(
+    mean = mean_x,
+    sd = sd_x
+  )
+  
+}
+## the input is x
+
+z_scores(x_vec)
+```
+
+Check that the function works.
+
+```{r}
+x_vec = rnorm(1000)
+
+mean_and_sd(x_vec)
+#awesome
+```
+
+## Multiple inputs
+
+```{r}
+x_vec = rnorm(100, mean = 3, sd = 4)
+mean_and_sd(x_vec)
+## can just run this to create multiple vectors and compute mean/sd multiple times
+
+```
+
+Create a simulated data set
+
+```{r}
+sim_data =
+  tibble(
+    x = rnorm(n = 100, mean = 4, sd = 3)
+  )
+
+sim_data %>% 
+  summarize(
+    mean = mean(x),
+    sd = sd(x)
+  )
+```
+I'd like to do this with a function
+
+```{r}
+sim_mean_sd = function(samp_size, mu, sigma) {
+  
+  sim_data =
+    tibble(
+      x = rnorm(n = samp_size, mean = mu, sd = sigma)
+  )
+
+  sim_data %>% 
+    summarize(
+      mean = mean(x),
+      sd = sd(x)
+  ) 
+  
+  
+}
+
+sim_mean_sd(100, 6, 3)
+
+## so what happens with this line of code is that it runs all the previous above code - creates new tibble each time with new/different numbers, means, and sd with specified sample size, mean, and sd.
+## this sets the stage for later lecture about simulation - learning something about randomness, the "sampling variation"
+```
+
+```{r}
+sim_mean_sd(100, 6, 3)
+## positional mapping - R knows that the numbers corespond to the position 
+
+sim_mean_sd(samp_size = 100, mu = 6, sigma = 3)
+## named matching - this is preferred and best
+sim_mean_sd(mu = 6, samp_size = 100, sigma = 3)
+## in matched mapping, order does not matter
+
+## next thing you can do is set default values:
+sim_mean_sd = function(samp_size, mu = 3, sigma = 4) {
+  
+  sim_data =
+    tibble(
+      x = rnorm(n = samp_size, mean = mu, sd = sigma)
+  )
+
+  sim_data %>% 
+    summarize(
+      mean = mean(x),
+      sd = sd(x)
+  ) 
+  
+  
+}
+
+sim_mean_sd(samp_size = 100, mu = 6, sigma = 3)
+#3 here, mu = 6 will overwrite the above default, and sigma will overwrite the above default
+sim_mean_sd(mu = 6, samp_size = 100, sigma = 3)
+
+sim_mean_sd(samp_size = 100)
+#but here, when not specified, it will default to the avove default values specified
+
+#so we are able to do good stuff with functions
+
 ```
 
