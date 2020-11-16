@@ -249,3 +249,146 @@ sim_mean_sd(samp_size = 100)
 
 ```
 
+
+## Let's review Napolean Dynamite
+
+
+```{r, eval = FALSE}
+url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=1"
+
+dynamite_html = read_html(url)
+
+review_titles = 
+  dynamite_html %>%
+  html_nodes(".a-text-bold span") %>%
+  html_text()
+
+review_stars = 
+  dynamite_html %>%
+  html_nodes("#cm_cr-review_list .review-rating") %>%
+  html_text() %>% 
+  str_extract("^\\d") %>%
+  as.numeric()
+
+review_text = 
+  dynamite_html %>%
+  html_nodes(".review-text-content span") %>%
+  html_text() %>%
+  str_replace_all("\n", "") %>%
+  str_trim()
+
+reviews = tibble(
+  title = review_titles,
+  stars = review_stars,
+  text = review_text
+)
+```
+
+What about the next page of review...
+
+```{r}
+url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=2"
+
+dynamite_html = read_html(url)
+
+review_titles = 
+  dynamite_html %>%
+  html_nodes(".a-text-bold span") %>%
+  html_text()
+
+review_stars = 
+  dynamite_html %>%
+  html_nodes("#cm_cr-review_list .review-rating") %>%
+  html_text() %>% 
+  str_extract("^\\d") %>%
+  as.numeric()
+
+review_text = 
+  dynamite_html %>%
+  html_nodes(".review-text-content span") %>%
+  html_text() %>%
+  str_replace_all("\n", "") %>%
+  str_trim()
+
+reviews_page2 = tibble(
+  title = review_titles,
+  stars = review_stars,
+  text = review_text
+)
+```
+
+So what's going on is to iterate, you need to copy, paste code chunks, manually change webpage number, change dataframe name.  This is tedious and also prone to error.  Many many reviews and at 10 reviews each page, this will take a long time.  Hot mess.  How to automate??
+
+Let's turn that code into a function
+```{r}
+# the only change is the first line of code to pull in the url - the url is the only thing that changes
+
+read_page_reviews = function(url) {
+  
+  html = read_html(url)
+
+  review_titles = 
+    html %>%
+    html_nodes(".a-text-bold span") %>%
+    html_text()
+  
+  review_stars = 
+    html %>%
+    html_nodes("#cm_cr-review_list .review-rating") %>%
+    html_text() %>% 
+    str_extract("^\\d") %>%
+    as.numeric()
+  
+  review_text = 
+    html %>%
+    html_nodes(".review-text-content span") %>%
+    html_text() %>%
+    str_replace_all("\n", "") %>%
+    str_trim()
+  
+  reviews = tibble(
+    title = review_titles,
+    stars = review_stars,
+    text = review_text
+  )
+
+  reviews
+  
+}
+```
+
+Let me try my function.
+
+```{r}
+dynamite_url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=1"
+
+read_page_reviews(dynamite_url)
+
+## this works, and can go back into code to customize or change what you want
+```
+
+Let's read a few pages of reviews.
+
+```{r}
+dynamite_url_base = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber="
+
+dynamite_urls = str_c(dynamite_url_base, 1:5)
+
+dynamite_urls[1]
+dynamite_urls[2]
+dynamite_urls[5]
+
+all_reviews = 
+  bind_rows(
+    read_page_reviews(dynamite_urls[1]),
+    read_page_reviews(dynamite_urls[2]),
+    read_page_reviews(dynamite_urls[3]),
+    read_page_reviews(dynamite_urls[4]),
+    read_page_reviews(dynamite_urls[5])
+)
+
+## up to now, this is copying and pasting code and entering new numbers each time - this is also labor intensive.
+## this sets the stage for future videos about how to stremline and make more efficient
+
+```
+
