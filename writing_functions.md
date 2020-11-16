@@ -56,12 +56,11 @@ x_vec = rnorm(30, mean = 5, sd = 3)
 (x_vec - mean(x_vec)) / sd(x_vec)
 ```
 
-    ##  [1] -0.096944373  1.232793328 -0.710098586  1.410402421  0.215322579
-    ##  [6]  1.535494675  0.788282160 -0.380940782 -0.854540423  0.785602023
-    ## [11]  0.000315198 -0.366330901  1.000792448  0.130432662 -0.389315744
-    ## [16]  1.136965739 -1.070974473 -0.257140815 -1.465723159  0.644837852
-    ## [21] -0.545565453 -1.486528774 -0.157898147  1.621093900 -0.018156417
-    ## [26]  1.362665488 -1.819334084 -1.829267126 -0.611051153  0.194809937
+    ##  [1]  0.09892136 -0.88688183  2.02289418  1.20951696 -1.30745842  0.31171312
+    ##  [7]  1.92935819  0.25461094 -0.61399354 -0.39519668  0.29863709  0.32280013
+    ## [13]  0.35934324 -0.26814896  1.14305411 -1.67141281  0.17686913 -0.75599512
+    ## [19] -0.38970083 -1.86133578  0.94350488  0.56357758 -1.26788359  0.84172893
+    ## [25]  0.22977704  0.88693350 -1.78942850 -0.08663980 -0.45789845  0.15873395
 
 I want a function to compute z-scores
 
@@ -78,12 +77,11 @@ z_scores = function(x) {
 z_scores(x_vec)
 ```
 
-    ##  [1] -0.096944373  1.232793328 -0.710098586  1.410402421  0.215322579
-    ##  [6]  1.535494675  0.788282160 -0.380940782 -0.854540423  0.785602023
-    ## [11]  0.000315198 -0.366330901  1.000792448  0.130432662 -0.389315744
-    ## [16]  1.136965739 -1.070974473 -0.257140815 -1.465723159  0.644837852
-    ## [21] -0.545565453 -1.486528774 -0.157898147  1.621093900 -0.018156417
-    ## [26]  1.362665488 -1.819334084 -1.829267126 -0.611051153  0.194809937
+    ##  [1]  0.09892136 -0.88688183  2.02289418  1.20951696 -1.30745842  0.31171312
+    ##  [7]  1.92935819  0.25461094 -0.61399354 -0.39519668  0.29863709  0.32280013
+    ## [13]  0.35934324 -0.26814896  1.14305411 -1.67141281  0.17686913 -0.75599512
+    ## [19] -0.38970083 -1.86133578  0.94350488  0.56357758 -1.26788359  0.84172893
+    ## [25]  0.22977704  0.88693350 -1.78942850 -0.08663980 -0.45789845  0.15873395
 
 Try my function on some other things. These should give errors
 
@@ -139,12 +137,11 @@ z_scores = function(x) {
 z_scores(x_vec)
 ```
 
-    ##  [1] -0.096944373  1.232793328 -0.710098586  1.410402421  0.215322579
-    ##  [6]  1.535494675  0.788282160 -0.380940782 -0.854540423  0.785602023
-    ## [11]  0.000315198 -0.366330901  1.000792448  0.130432662 -0.389315744
-    ## [16]  1.136965739 -1.070974473 -0.257140815 -1.465723159  0.644837852
-    ## [21] -0.545565453 -1.486528774 -0.157898147  1.621093900 -0.018156417
-    ## [26]  1.362665488 -1.819334084 -1.829267126 -0.611051153  0.194809937
+    ##  [1]  0.09892136 -0.88688183  2.02289418  1.20951696 -1.30745842  0.31171312
+    ##  [7]  1.92935819  0.25461094 -0.61399354 -0.39519668  0.29863709  0.32280013
+    ## [13]  0.35934324 -0.26814896  1.14305411 -1.67141281  0.17686913 -0.75599512
+    ## [19] -0.38970083 -1.86133578  0.94350488  0.56357758 -1.26788359  0.84172893
+    ## [25]  0.22977704  0.88693350 -1.78942850 -0.08663980 -0.45789845  0.15873395
 
 These should give erros
 
@@ -201,12 +198,11 @@ z_scores = function(x) {
 z_scores(x_vec)
 ```
 
-    ##  [1] -0.096944373  1.232793328 -0.710098586  1.410402421  0.215322579
-    ##  [6]  1.535494675  0.788282160 -0.380940782 -0.854540423  0.785602023
-    ## [11]  0.000315198 -0.366330901  1.000792448  0.130432662 -0.389315744
-    ## [16]  1.136965739 -1.070974473 -0.257140815 -1.465723159  0.644837852
-    ## [21] -0.545565453 -1.486528774 -0.157898147  1.621093900 -0.018156417
-    ## [26]  1.362665488 -1.819334084 -1.829267126 -0.611051153  0.194809937
+    ##  [1]  0.09892136 -0.88688183  2.02289418  1.20951696 -1.30745842  0.31171312
+    ##  [7]  1.92935819  0.25461094 -0.61399354 -0.39519668  0.29863709  0.32280013
+    ## [13]  0.35934324 -0.26814896  1.14305411 -1.67141281  0.17686913 -0.75599512
+    ## [19] -0.38970083 -1.86133578  0.94350488  0.56357758 -1.26788359  0.84172893
+    ## [25]  0.22977704  0.88693350 -1.78942850 -0.08663980 -0.45789845  0.15873395
 
 These should give errors
 
@@ -273,12 +269,11 @@ mean_and_sd = function(x) {
 z_scores(x_vec)
 ```
 
-    ##  [1] -0.096944373  1.232793328 -0.710098586  1.410402421  0.215322579
-    ##  [6]  1.535494675  0.788282160 -0.380940782 -0.854540423  0.785602023
-    ## [11]  0.000315198 -0.366330901  1.000792448  0.130432662 -0.389315744
-    ## [16]  1.136965739 -1.070974473 -0.257140815 -1.465723159  0.644837852
-    ## [21] -0.545565453 -1.486528774 -0.157898147  1.621093900 -0.018156417
-    ## [26]  1.362665488 -1.819334084 -1.829267126 -0.611051153  0.194809937
+    ##  [1]  0.09892136 -0.88688183  2.02289418  1.20951696 -1.30745842  0.31171312
+    ##  [7]  1.92935819  0.25461094 -0.61399354 -0.39519668  0.29863709  0.32280013
+    ## [13]  0.35934324 -0.26814896  1.14305411 -1.67141281  0.17686913 -0.75599512
+    ## [19] -0.38970083 -1.86133578  0.94350488  0.56357758 -1.26788359  0.84172893
+    ## [25]  0.22977704  0.88693350 -1.78942850 -0.08663980 -0.45789845  0.15873395
 
 Check that the function works.
 
@@ -289,9 +284,9 @@ mean_and_sd(x_vec)
 ```
 
     ## # A tibble: 1 x 2
-    ##     mean    sd
-    ##    <dbl> <dbl>
-    ## 1 0.0335 0.965
+    ##      mean    sd
+    ##     <dbl> <dbl>
+    ## 1 -0.0349  1.02
 
 ``` r
 #awesome
@@ -307,7 +302,7 @@ mean_and_sd(x_vec)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  2.56  3.88
+    ## 1  3.50  3.35
 
 ``` r
 ## can just run this to create multiple vectors and compute mean/sd multiple times
@@ -331,7 +326,7 @@ sim_data %>%
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  3.78  2.66
+    ## 1  3.85  3.05
 
 I’d like to do this with a function
 
@@ -358,7 +353,7 @@ sim_mean_sd(100, 6, 3)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  6.46  2.74
+    ## 1  6.23  2.66
 
 ``` r
 ## so what happens with this line of code is that it runs all the previous above code - creates new tibble each time with new/different numbers, means, and sd with specified sample size, mean, and sd.
@@ -372,7 +367,7 @@ sim_mean_sd(100, 6, 3)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  6.17  3.12
+    ## 1  6.63  2.70
 
 ``` r
 ## positional mapping - R knows that the numbers corespond to the position 
@@ -383,7 +378,7 @@ sim_mean_sd(samp_size = 100, mu = 6, sigma = 3)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  6.08  2.99
+    ## 1  6.67  2.40
 
 ``` r
 ## named matching - this is preferred and best
@@ -393,7 +388,7 @@ sim_mean_sd(mu = 6, samp_size = 100, sigma = 3)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  5.68  3.04
+    ## 1  5.56  2.82
 
 ``` r
 ## in matched mapping, order does not matter
@@ -421,7 +416,7 @@ sim_mean_sd(samp_size = 100, mu = 6, sigma = 3)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  5.86  2.83
+    ## 1  5.91  3.09
 
 ``` r
 #3 here, mu = 6 will overwrite the above default, and sigma will overwrite the above default
@@ -431,7 +426,7 @@ sim_mean_sd(mu = 6, samp_size = 100, sigma = 3)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  6.59  3.05
+    ## 1  6.26  3.06
 
 ``` r
 sim_mean_sd(samp_size = 100)
@@ -440,7 +435,7 @@ sim_mean_sd(samp_size = 100)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  3.59  4.15
+    ## 1  2.87  4.14
 
 ``` r
 #but here, when not specified, it will default to the avove default values specified
@@ -589,7 +584,7 @@ Let’s read a few pages of reviews.
 ``` r
 dynamite_url_base = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber="
 
-dynamite_urls = str_c(dynamite_url_base, 1:5)
+dynamite_urls = str_c(dynamite_url_base, 1:50)
 
 dynamite_urls[1]
 ```
@@ -619,5 +614,55 @@ all_reviews =
 )
 
 ## up to now, this is copying and pasting code and entering new numbers each time - this is also labor intensive.
-## this sets the stage for future videos about how to stremline and make more efficient
+## this sets the stage for future videos about how to streamline and make more efficient
 ```
+
+If you look at environment, it is starting to have a lot of “Data”,
+“Values”, and “Functions” - it can get confusing and predispose to
+error - so Jeff restarts R at this point to be careful - and this gets
+rid of stuff in the environment
+
+This will make the environment empty
+
+This is the concept of “scoping” - be careful about scoping - it can be
+a difficult kind of thing
+
+## Mean scoping example
+
+``` r
+f = function(x) {
+  z = x + y
+  z
+}
+
+x = 1
+y = 2
+
+f(x = y)
+```
+
+    ## [1] 4
+
+next example
+
+``` r
+f = function(x1) {
+  z = x1 + x2
+  z
+}
+
+x = 1
+y = 2
+
+f(x1 = y)
+```
+
+    ## Error in f(x1 = y): object 'x2' not found
+
+``` r
+## this breaks because x2 is not found in the environment
+```
+
+So a lot of this can be confusing and problematic - and when you restart
+next session, your code can break and will return the message like
+“Error in f(x1 = y) : object ‘x2’ not found” - this is a scoping issue

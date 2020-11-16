@@ -372,7 +372,7 @@ Let's read a few pages of reviews.
 ```{r}
 dynamite_url_base = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber="
 
-dynamite_urls = str_c(dynamite_url_base, 1:5)
+dynamite_urls = str_c(dynamite_url_base, 1:50)
 
 dynamite_urls[1]
 dynamite_urls[2]
@@ -388,7 +388,44 @@ all_reviews =
 )
 
 ## up to now, this is copying and pasting code and entering new numbers each time - this is also labor intensive.
-## this sets the stage for future videos about how to stremline and make more efficient
+## this sets the stage for future videos about how to streamline and make more efficient
 
 ```
 
+If you look at environment, it is starting to have a lot of "Data", "Values", and "Functions" - it can get confusing and predispose to error - so Jeff restarts R at this point to be careful - and this gets rid of stuff in the environment
+
+This will make the environment empty
+
+This is the concept of "scoping" - be careful about scoping - it can be a difficult kind of thing
+
+
+## Mean scoping example
+
+```{r}
+f = function(x) {
+  z = x + y
+  z
+}
+
+x = 1
+y = 2
+
+f(x = y)
+```
+
+next example
+```{r, error = TRUE}
+f = function(x1) {
+  z = x1 + x2
+  z
+}
+
+x = 1
+y = 2
+
+f(x1 = y)
+
+## this breaks because x2 is not found in the environment
+```
+
+So a lot of this can be confusing and problematic - and when you restart next session, your code can break and will return the message like "Error in f(x1 = y) : object 'x2' not found" - this is a scoping issue
